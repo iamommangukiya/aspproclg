@@ -26,69 +26,68 @@ Partial Class login
         End Sub
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Try
+            cmd.CommandText = " select * from tbl_user where uname= '" & txtemail.Text & "' and pwd ='" & txtpwd.Text & "'"
+            con.Open()
+            dr = cmd.ExecuteReader()
+            If dr.HasRows = True Then
+                Session("uname") = txtemail.Text
+                Response.Redirect("~/pages/dashbord.aspx")
+
+            Else
+                lblpwd.Text = "Invalid Username and Password"
+
+
+            End If
+        Catch ex As Exception
+
+            lblpwd.Text = ex.Message
+
+        End Try
+        con.Close()
+
         'Try
-        '    cmd.CommandText = " select id from tbl_user where uname= '" & txtemail.Text & "' and pwd ='" & txtpwd.Text & "'"
-        '    con.Open()
-        '    dr = cmd.ExecuteScalar()
+
+        '    cmd.CommandText = "SELECT uname, pwd,gender FROM tbl_user WHERE uname = @uname AND pwd = @pwd"
+        '    cmd.Parameters.AddWithValue("@uname", txtemail.Text)
+        '    cmd.Parameters.AddWithValue("@pwd", txtpwd.Text)
+
+        '    If con.State = ConnectionState.Closed Then
+        '        con.Open()
+        '    End If
+        '    dr = cmd.ExecuteReader()
+
         '    If dr.HasRows Then
-
+        '        ' Authentication successful
         '        dr.Read()
-        '        Session("uname") = dr("name").ToString()
+        '        Session("uname") = txtemail.Text
+        '        'Dim gender As String = dr("gender").ToString()
 
+        '        'If gender = "Male" Then
+        '        '    Session("Gender") = "Female"
+        '        'ElseIf gender = "Female" Then
+        '        '    Session("Gender") = "Male"
+        '        'End If
 
-
+        '        ' Redirect to the dashboard page
         '        Response.Redirect("~/pages/dashbord.aspx")
-
         '    Else
-        '        MsgBox("false info")
+
 
 
         '    End If
+        '    con.Close()
         'Catch ex As Exception
+        '    MsgBox(ex.InnerException)
+
 
         'End Try
-        Try
-
-            cmd.CommandText = "SELECT uname, pwd,gender FROM tbl_user WHERE uname = @uname AND pwd = @pwd"
-            cmd.Parameters.AddWithValue("@uname", txtemail.Text)
-            cmd.Parameters.AddWithValue("@pwd", txtpwd.Text)
-
-            If con.State = ConnectionState.Closed Then
-                con.Open()
-            End If
-            dr = cmd.ExecuteReader()
-
-            If dr.HasRows Then
-                ' Authentication successful
-                dr.Read()
-                Session("uname") = dr("uname").ToString()
-                'Dim gender As String = dr("gender").ToString()
-
-                'If gender = "Male" Then
-                '    Session("Gender") = "Female"
-                'ElseIf gender = "Female" Then
-                '    Session("Gender") = "Male"
-                'End If
-
-                ' Redirect to the dashboard page
-                Response.Redirect("~/pages/dashbord.aspx")
-            Else
-
-
-
-            End If
-            con.Close()
-        Catch ex As Exception
-            MsgBox(ex.InnerException)
-
-
-        End Try
 
 
 
 
 
-        dr.Close()
+
     End Sub
 End Class
 

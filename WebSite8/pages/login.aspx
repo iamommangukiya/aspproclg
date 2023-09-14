@@ -88,7 +88,7 @@
 }
        </style>
 </head>
-<body>
+<body id="lblpwd">
     <script>
     
     </script>
@@ -143,6 +143,7 @@
                     <asp:Button ID="Button1" runat="server" Text="Login" class="btn" Height="37px"     
                         Width="219px" />
                     <br />
+                    <asp:Label ID="lblpwd" runat="server"></asp:Label>
                     <br />
                     <div class="linka">
                     <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="True" 

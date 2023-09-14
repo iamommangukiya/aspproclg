@@ -26,7 +26,8 @@
             <tr>
             <td colspan="2">Profile pic</td>
             <td colspan="4">
-                <asp:FileUpload ID="FileUpload1" runat="server" /></td>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+                </td>
             </tr>
             <tr>
               <td>Firstname</td>
