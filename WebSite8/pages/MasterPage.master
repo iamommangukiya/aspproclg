@@ -1,0 +1,105 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title></title>
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+     body 
+        {
+
+         
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../images/bg6.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+        
+        }
+    </style>
+</head>
+<body style=" background-image: url('../images/bg.jpg');  /* Replace 'your-background-image.jpg' with your actual image file path */
+            background-size: cover;
+         
+            background-repeat: no-repeat;">
+    <form id="form1" runat="server">
+    <div >
+       <div>
+      
+       <nav class="navbar navbar-expand-lg custom-nav navbar-light fixed-top sticky">
+      <div class="container">
+        <a class="navbar-brand pt-0 logo" href="#">
+          <img src="../images/logo.png" alt="" class="img-fluid logo-light">
+          <img src="assets/images/logo-dark.png" alt="" class="img-fluid logo-dark">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="mdi mdi-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto" id="main_nav">
+            <li class="nav-item">
+                          <asp:HyperLink CssClass="nav-link" ID="HyperLink4" runat="server" NavigateUrl="~/pages/Homepage.aspx">Home</asp:HyperLink>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+           
+            <li class="nav-item">
+             <asp:HyperLink CssClass="nav-link" ID="HyperLink3" runat="server" NavigateUrl="~/pages/login.aspx">Login</asp:HyperLink>
+
+            </li>
+            <li class="nav-item">
+                         <asp:HyperLink CssClass="nav-link" ID="HyperLink2" runat="server" NavigateUrl="~/pages/ragi.aspx">Ragister</asp:HyperLink>
+
+            </li>
+            <li class="nav-item">
+             <asp:HyperLink CssClass="nav-link" ID="HyperLink1" runat="server" NavigateUrl="~/pages/userpro.aspx">Profile</asp:HyperLink>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+       
+       </div>
+      <div>
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+      
+      </div>
+       <div class="footer">
+
+           <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+               <div class="col-md-4 d-flex align-items-center">
+                   <a class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" 
+                       href="../">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                   </a><span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+               </div>
+               <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                   <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg>
+                       </a></li>
+                   <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg>
+                       </a></li>
+                   <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg>
+                       </a></li>
+               </ul>
+  </footer>
+           </div>
+
+       </div>
+       </div>
+   
+    </form>
+</body>
+</html>
