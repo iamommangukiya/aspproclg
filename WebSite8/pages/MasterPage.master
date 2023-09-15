@@ -6,6 +6,9 @@
 <head runat="server">
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
     <title></title>
  
     <asp:ContentPlaceHolder id="head" runat="server">
@@ -29,7 +32,7 @@
         }
     </style>
 </head>
-<body style=" background-image: url('./images/bg.jpg');  /* Replace 'your-background-image.jpg' with your actual image file path */
+<body style=" background-image: url('../images/bg.jpg');  /* Replace 'your-background-image.jpg' with your actual image file path */
             background-size: cover;
          
             background-repeat: no-repeat;">
@@ -38,7 +41,7 @@
        <div>
       
        <nav class="navbar navbar-expand-lg custom-nav navbar-light fixed-top sticky">
-      <div class="container">
+      <div class="container ">
         <a class="navbar-brand pt-0 logo" href="#">
           <img src="../images/logo1.jpeg" alt="" class="img-fluid logo-light">
           <img src="assets/images/logo-dark.png" alt="" class="img-fluid logo-dark">
@@ -49,7 +52,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto" id="main_nav">
             <li class="nav-item">
-                          <asp:HyperLink CssClass="nav-link" ID="HyperLink4" runat="server" NavigateUrl="~/pages/Homepage.aspx">Home</asp:HyperLink>
+                          <asp:HyperLink CssClass="nav-link" ID="HyperLink4" runat="server" NavigateUrl="Home.aspx">Home</asp:HyperLink>
 
             </li>
             <li class="nav-item">
@@ -65,7 +68,7 @@
 
             </li>
             <li class="nav-item">
-             <asp:HyperLink CssClass="nav-link" ID="HyperLink1" runat="server" NavigateUrl="~/pages/userpro.aspx">Profile</asp:HyperLink>
+             <asp:HyperLink CssClass="nav-link" ID="HyperLink1" runat="server" NavigateUrl="update.aspx">Profile</asp:HyperLink>
             </li>
             
           </ul>

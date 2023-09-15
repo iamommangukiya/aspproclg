@@ -22,8 +22,28 @@ Partial Class _Default
                 imageUrl = "~/image_store/" + FileUpload1.FileName
 
                 If txtpwd.Text = txtcpwd.Text Then
-
-                    cmd.CommandText = "Insert into tbl_user values('" & imageUrl & "','" & txtfname.Text & "', '" & txtmname.Text & "', '" & txtlname.Text & "', '" & ddgender.SelectedItem.Text & "', '" & txtemail.Text & "', '" & mno & "', '" & txtheight.Text & "','" & txtwhight.Text & "', '" & dob & "', '" & ddl_reg_religion.SelectedItem.Text & "', '" & txtadd.Text & "', '" & city & "', '" & txtpincode.Text & "', '" & txtuname.Text & "','" & txtpwd.Text & "','" & txtcpwd.Text & "','" & txtgdegree.Text & "','" & txtprofe.Text & "'  )"
+                    Dim query As String = "INSERT INTO tbl_user (image_url, fname, mname, lname, age, gender, email, mno, height, weight, dob, religion, address, city, pincode, uname, password, confirm_password, degree, profession) VALUES (@imageUrl, @fname, @mname, @lname, @age, @gender, @email, @mno, @height, @weight, @dob, @religion, @address, @city, @pincode, @uname, @password, @confirmPassword, @degree, @profession)"
+                    Dim cmd As New SqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@imageUrl", imageUrl)
+                    cmd.Parameters.AddWithValue("@fname", txtfname.Text)
+                    cmd.Parameters.AddWithValue("@mname", txtmname.Text)
+                    cmd.Parameters.AddWithValue("@lname", txtlname.Text)
+                    cmd.Parameters.AddWithValue("@age", Convert.ToInt32(txtage.Text))
+                    cmd.Parameters.AddWithValue("@gender", ddgender.SelectedItem.Text)
+                    cmd.Parameters.AddWithValue("@email", txtemail.Text)
+                    cmd.Parameters.AddWithValue("@mno", mno)
+                    cmd.Parameters.AddWithValue("@height", txtheight.Text)
+                    cmd.Parameters.AddWithValue("@weight", txtwhight.Text)
+                    cmd.Parameters.AddWithValue("@dob", dob)
+                    cmd.Parameters.AddWithValue("@religion", ddl_reg_religion.SelectedItem.Text)
+                    cmd.Parameters.AddWithValue("@address", txtadd.Text)
+                    cmd.Parameters.AddWithValue("@city", city)
+                    cmd.Parameters.AddWithValue("@pincode", txtpincode.Text)
+                    cmd.Parameters.AddWithValue("@uname", txtuname.Text)
+                    cmd.Parameters.AddWithValue("@password", txtpwd.Text)
+                    cmd.Parameters.AddWithValue("@confirmPassword", txtcpwd.Text)
+                    cmd.Parameters.AddWithValue("@degree", txtgdegree.Text)
+                    cmd.Parameters.AddWithValue("@profession", txtprofe.Text)
                     'cmd.CommandText = "Insert into tbl_admin values('" & txt_reg_uname.Text & "','" & txt_reg_pwd.Text & "','" & txt_reg_cpwd.Text & "')"
                     con.Open()
                     cmd.ExecuteNonQuery()

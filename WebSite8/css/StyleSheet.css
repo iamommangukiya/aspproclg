@@ -11,7 +11,7 @@
 }
 body
 {
-     background-image: url('../images/bg.jpg');  /* Replace 'your-background-image.jpg' with your actual image file path */
+     background-image: url('./images/bg.jpg');  /* Replace 'your-background-image.jpg' with your actual image file path */
             background-size: cover;
          
             background-repeat: no-repeat;
@@ -40,7 +40,7 @@ td
                     border-radius: 10px;
   padding: 30px 40px;
  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   backdrop-filter: blur(20px);

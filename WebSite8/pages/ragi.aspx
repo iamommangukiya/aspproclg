@@ -168,6 +168,10 @@
               <td>Sub cast</td>
               <td><asp:TextBox ID="txtcast" runat="server"></asp:TextBox></td>
             </tr>
+            <td>age</td>
+              <td><asp:TextBox ID="txtage" runat="server"></asp:TextBox></td>
+            <tr>
+            </tr>
             <td colspan="3">
               <h2>Address Details</h2>
             </td>
